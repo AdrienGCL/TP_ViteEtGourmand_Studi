@@ -15,15 +15,11 @@
 
     <div class="global-container padding-t-l padding-b-l bg-dark position-relative min-vh-100">
         <header class="container-fluid p-0 m-0">
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center margin-b-l">
                 <h1 class="brand-l primary-text m-0">Vite & Gourmand</h1>
             </div>
-            <div class="d-flex justify-content-center">
-                <svg class="col-10 margin-t-l p-0" height="2" xmlns="http://www.w3.org/2000/svg">
-                    <line class="separator" x1="0" y1="0" x2="100%" y2="0"/>
-                </svg>
-            </div>
-            <div class="d-flex justify-content-center margin-t-l">
+            <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+            <div class="d-flex justify-content-center margin-t-l margin-b-l">
                 <ul class="nav nav-pills headline w-100 justify-content-around padding-l-l padding-r-l">
                     <li class="nav-item">
                         <a href="./index.php?controller=home&action=show" class="nav-link primary-text p-0" aria-current="page">Accueil</a>
@@ -42,10 +38,5 @@
                     </li> -->
                 </ul>
             </div>
-            <div class="d-flex justify-content-center">
-                <svg class="col-10 margin-t-l margin-b-0 p-0" height="2" xmlns="http://www.w3.org/2000/svg">
-                    <line class="separator" x1="0" y1="0" x2="100%" y2="0"/>
-                    Sorry, your browser does not support inline SVG.
-                </svg>
-            </div>
+            <?php require _ROOTPATH_.'\templates\separator.php'; ?>
         </header>

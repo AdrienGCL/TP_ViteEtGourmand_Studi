@@ -2,6 +2,8 @@
 
 namespace app\controller;
 
+use app\repository\HoraireRepository;
+
 class Controller
 {
     public function route():void
@@ -34,12 +36,22 @@ class Controller
         }
     }
 
+    protected function getHoraire():array
+    {
+        // Récupération des horaires d'ouverture
+        $hoaraireRepository = new HoraireRepository();
+        $horaire = $hoaraireRepository->getAllHoraires();
+
+        return $horaire;
+    }
+
     protected function render(string $path, array $params = []):void
     {
         //Chemin du template à afficher
         $filePath = _ROOTPATH_.'/templates/'.$path.'.php';
 
         try {
+            $horaire = $this->getHoraire();
             if (!file_exists($filePath)) {
                 // Si le fichier n'existe pas
                 throw new \Exception("Fichier non trouvé : ".$filePath);

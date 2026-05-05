@@ -2,11 +2,8 @@
 
     namespace app\controller;
 
-use app\entity\avis;
-use app\repository;
 use app\repository\avisRepository;
 use app\repository\userRepository;
-use app\tools\StringTools;
 
     class HomeController extends Controller
     {

@@ -12,17 +12,12 @@
                         <img class="img-main" src="<?php _ROOTPATH_ ?>/assets/img/table.jpg" alt="Photographie d'un repas">
                     </div>
                 </div>
-                <div class="row justify-content-center padding-t-l">
+                <div class="row justify-content-center padding-t-l margin-b-l">
                     <div class="bouton bg-primary p-0 d-flex justify-content-center">
                         <a class="text dark-text text-decoration-underline m-0 p-0" href="./index.php?controller=carte">Commander</a>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <svg class="col-10 margin-t-l margin-b-0 p-0" height="2" xmlns="http://www.w3.org/2000/svg">
-                        <line class="separator" x1="0" y1="0" x2="100%" y2="0"/>
-                        Sorry, your browser does not support inline SVG.
-                    </svg>
-                </div>
+                <?php require _ROOTPATH_.'\templates\separator.php'; ?>
             </section>
             <section>
                 <div class="row justify-content-center padding-t-l">
@@ -34,17 +29,12 @@
                         <p class="mx-0 margin-t-l p-0 text white-text">Derrière Vite & Gourmand, il y a avant tout une équipe de professionnels passionnés, animés par le goût de l’excellence et le sens du détail.<br><br>À sa tête, Julie et José mettent leur expertise culinaire et leur parfaite connaissance de l’événementiel au service de prestations sur mesure. Leur maîtrise des techniques traditionnelles, alliée à une créativité constamment renouvelée, leur permet d’imaginer des créations élégantes, équilibrées et raffinées.<br><br>Autour d’eux, une brigade engagée et rigoureuse œuvre chaque jour avec précision et exigence. Cuisiniers, pâtissiers et personnel de service partagent des valeurs communes : sélection attentive des produits, maîtrise des savoir-faire, organisation irréprochable et sens du service attentif.<br><br>Chaque événement est préparé avec soin et coordination afin de garantir une expérience fluide, harmonieuse et mémorable. Chez Vite & Gourmand, l’excellence est avant tout un travail d’équipe.</p>
                     </article>
                 </div>
-                <div class="row justify-content-center padding-t-l">
+                <div class="row justify-content-center padding-t-l margin-b-l">
                     <div class="bouton bg-primary p-0 d-flex justify-content-center">
                         <a class="text dark-text text-decoration-underline m-0 p-0" href="./index.php?controller=carte">Commander</a>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <svg class="col-10 margin-t-l margin-b-0 p-0" height="2" xmlns="http://www.w3.org/2000/svg">
-                        <line class="separator" x1="0" y1="0" x2="100%" y2="0"/>
-                        Sorry, your browser does not support inline SVG.
-                    </svg>
-                </div>
+                <?php require _ROOTPATH_.'\templates\separator.php'; ?>
             </section>
 
             <section class="padding-t-l bg-extra-dark">
@@ -82,6 +72,7 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
+                <?php require _ROOTPATH_.'\templates\separator.php'; ?>
             </section>
         </main>
 
