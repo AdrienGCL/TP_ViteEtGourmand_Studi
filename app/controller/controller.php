@@ -17,6 +17,11 @@ class Controller
                         $homeController = new HomeController();
                         $homeController->route();
                     break;
+                    case 'carte':
+                        // charge le controller home
+                        $menuController = new MenuController();
+                        $menuController->route();
+                    break;
                     default:
                         throw new \Exception("La page demandée n'existe pas");
                     break;

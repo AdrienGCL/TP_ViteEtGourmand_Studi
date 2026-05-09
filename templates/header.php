@@ -25,7 +25,7 @@
                         <a href="./index.php?controller=home&action=show" class="nav-link primary-text p-0" aria-current="page">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./index.php?controller=carte" class="nav-link primary-text p-0">Nos Menus</a>
+                        <a href="./index.php?controller=carte&action=showAll" class="nav-link primary-text p-0">Nos Menus</a>
                     </li>
                     <li class="nav-item">
                         <a href="./index.php?controller=espacePerso" class="nav-link primary-text p-0">Mon Espace</a>
