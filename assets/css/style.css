@@ -289,10 +289,10 @@ body{
     border-radius: 5px;
 }
 .border-tertiary{
-    border: 1px solid var(--tertiary);
+    border: 2px solid var(--tertiary);
 }
 .primary-border{
-    border: 1px solid var(--primary);
+    border: 2px solid var(--primary);
 }
 
 /* Classes listes */
@@ -341,6 +341,9 @@ input:focus, select:focus{
 /* Classe de souris */
 .cursor-default{
     cursor: default;
+}
+.cursor-pointer{
+    cursor: pointer;
 }
 
 

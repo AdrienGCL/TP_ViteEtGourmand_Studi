@@ -2,15 +2,15 @@
 
 <main>
     <section>
-        <div class="row margin-l-0 margin-t-l margin-b-l justify-content-center">
+        <div class="row margin-l-0 margin-t-l justify-content-center">
             <div class="col-10 m-0 p-0">
-                <div class="filter d-flex justify-content-center p-0 tertiary-text">
+                <div class="filter d-flex justify-content-center p-0 dark-text bg-secondary cursor-pointer">
                     <p class="text text-decoration-underline margin-l-s">Filtrer</p>
-                    <i class="bi bi-chevron-up margin-l-s margin-r-s"></i>
+                    <i class="bi bi-chevron-down margin-l-s margin-r-s"></i>
                 </div>
             </div>
         </div>
-        <div class="row margin-l-0 margin-r-0 justify-content-center">
+        <div class="filterDiv row margin-l-0 margin-r-0 justify-content-center">
             <div class="col-10 m-0 padding-m bg-secondary">
                 <div class="row m-0 p-0 justify-content-around">
                     <div class="col-auto d-flex bg-white padding-s m-0 radius-m border-tertiary">
@@ -76,10 +76,15 @@
                 </div>
             </div>
         <?php } ?>
+        <div class="noResultDiv margin-t-l d-none">
+                <div class="row justify-content-center">
+                    <p class="text white-text col-auto m-0">Veuillez nous excuser, aucun de nos menus ne correspond à ces critères actuellement.</p>
+                </div>
+            </div>
     </section>
 </main>
 
-<script src=".\assets\js\menuFilter.js"></script>
+<script src=".\assets\js\menuFilter.js" defer></script>
 
 
 <?php require_once _ROOTPATH_.'\templates\footer.php'; ?>
