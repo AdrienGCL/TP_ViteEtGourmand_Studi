@@ -29,4 +29,26 @@ class MenuRepository
             // Gestion des erreurs
         }
     }
+
+    public function getSingleMenu(int $id){
+        try{
+            // Appel bdd
+            $mysql = mysql::getInstance();
+            $pdo = $mysql->getPDO();
+
+            $requete = 'SELECT * FROM menu WHERE menu_id = :id';
+            $query = $pdo->prepare($requete);
+            $query->bindValue(':id', $id, $pdo::PARAM_INT);
+
+            $query->execute();
+            
+            $newMenu = new Menu;
+            $selectedMenu = $newMenu->fromArray($query->fetch($pdo::FETCH_ASSOC));
+                
+            return $selectedMenu;
+        }
+        catch(\Exception $e){
+            // Gestion des erreurs
+        }
+    }
 }
