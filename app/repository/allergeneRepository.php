@@ -4,6 +4,7 @@ namespace app\repository;
 
 use app\entity\allergene;
 use app\db\mysql;
+use app\tools\requestTools;
 
 class allergeneRepository
 {
@@ -57,17 +58,8 @@ class allergeneRepository
             $mysql = mysql::getInstance();
             $pdo = $mysql->getPDO();
 
-            $requete = 'SELECT * FROM allergenes WHERE allergene_id IN (';
-
-            // Ajout d'un paramètre à la requête pour chaque id de la liste
-            for($i = 0; $i < count($idList); $i++){
-                if($i == count($idList)-1){
-                    $requete .= ':id'.$i.')';
-                }
-                else{
-                    $requete .= ':id'.$i.',';
-                }
-            }
+            $requeteTemplate = 'SELECT * FROM allergenes WHERE allergene_id IN (';
+            $requete = RequestTools::buildFromIdList($idList, $requeteTemplate);
 
             $query = $pdo->prepare($requete);
             

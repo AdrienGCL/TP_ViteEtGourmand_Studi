@@ -66,24 +66,31 @@
             try{
                 if(isset($_GET['id'])){
 
+                    // Récupérer le menu
                     $menuRepository = new MenuRepository;
                     $menu = $menuRepository->getSingleMenu($_GET['id']);
 
+                    // Récupérer le thème
                     $themeRepository = new ThemeRepository;
                     $theme = $themeRepository->getSingleTheme($menu->getTheme());
 
+                    // Récupérer le régime
                     $regimeRepository = new RegimeRepository;
                     $regime = $regimeRepository->getSingleRegime($menu->getRegime());
 
+                    // Récupérer l'entrée
                     $entreeRepository = new EntreeRepository;
                     $entree = $entreeRepository->getSinglePlat($menu->getEntree());
 
+                    // Récuppérer le plat principal
                     $platRepository = new PlatRepository;
                     $plat = $platRepository->getSinglePlat($menu->getPlat());
 
+                    // Récupérer le dessert
                     $dessertRepository = new DessertRepository;
                     $dessert = $dessertRepository->getSinglePlat($menu->getDessert());
 
+                    // Récupérer les allergènes par plat
                     $allergeneRepository = new AllergeneRepository;
                     $allergenesEntree = $allergeneRepository->getPlatAllergenes($menu->getEntree(), 'entree');
                     $allergenesPlat = $allergeneRepository->getPlatAllergenes($menu->getPlat(), 'plat');
@@ -91,11 +98,12 @@
 
                     $allergenesIdList = [];
 
+                    // Regroupement et optimisation des id des allergènes en une seule liste
                     $allergenesIdList = ArrayTools::addFromArray($allergenesEntree, $allergenesIdList);
                     $allergenesIdList = ArrayTools::addFromArray($allergenesPlat, $allergenesIdList);
                     $allergenesIdList = ArrayTools::addFromArray($allergenesDessert, $allergenesIdList);
 
-                    // Récupérer les allergènes à partir des id
+                    // Récupérer les allergènes à partir dela liste des id
                     $allergenes = $allergeneRepository->getAllergenesById($allergenesIdList);
 
 
