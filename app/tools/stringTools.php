@@ -23,4 +23,10 @@ class StringTools
         $firstLetter = substr($word, 0, 1);
         return $firstLetter;
     }
+
+    public static function toUpperCase(string $word):string
+    {
+        $newWord = strtoupper($word);
+        return $newWord;
+    }
 }

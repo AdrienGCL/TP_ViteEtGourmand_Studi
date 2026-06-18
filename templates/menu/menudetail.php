@@ -5,7 +5,7 @@
         <div class="col-10 m-0 p-0">
             <div class="filter d-flex justify-content-center p-0 tertiary-text">
                 <i class="bi bi-chevron-left margin-l-s"></i>
-                <a class="text text-decoration-underline margin-l-s margin-r-s tertiary-text" href="./index.php?controller=carte&action=showAll">Revenir à la carte</a>
+                <a class="text text-decoration-underline margin-l-s margin-r-s tertiary-text" href="./index.php?controller=menu&action=showAll">Revenir à la carte</a>
             </div>
         </div>
     </div>

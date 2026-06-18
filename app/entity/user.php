@@ -235,4 +235,38 @@ class User
 
         return $this;
     }
+
+    // Remplissage des propriétés d'après un array
+    public function fromArray(array $data): self
+    {
+        $this->setId((int)$data['user_id']);
+        $this->setPrenom((string)$data['prenom']);
+        $this->setNom((string)$data['nom']);
+        $this->setTelephone((string)$data['telephone']);
+        $this->setMail((string)$data['mail']);
+        $this->setAdresse((string)$data['adresse']);
+        $this->setCodePostale((int)$data['code_postale']);
+        $this->setVille((string)$data['ville']);
+        $this->setPays((string)$data['pays']);
+        $this->setRole((int)$data['role']);
+        $this->setStatut((int)$data['statut']);
+
+        return $this;
+    }
+
+    // Contrôle du statut du compte
+    public function verifyStatut():bool
+    {
+        switch($this->getStatut()){
+            case 1:
+                return true;
+                break;
+            case 2:
+                return false;
+                break;
+            default:
+                return false;
+                break;
+        }
+    }
 }

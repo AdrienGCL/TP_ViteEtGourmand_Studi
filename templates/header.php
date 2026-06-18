@@ -25,13 +25,13 @@
                         <a href="./index.php?controller=home&action=show" class="nav-link primary-text p-0" aria-current="page">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./index.php?controller=carte&action=showAll" class="nav-link primary-text p-0">Nos Menus</a>
+                        <a href="./index.php?controller=menu&action=showAll" class="nav-link primary-text p-0">Nos Menus</a>
                     </li>
                     <li class="nav-item">
                         <a href="./index.php?controller=espacePerso" class="nav-link primary-text p-0">Mon Espace</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./index.php?controller=connexion" class="nav-link primary-text p-0">Connexion</a>
+                        <a href="./index.php?controller=connexion&action=connexion" class="nav-link primary-text p-0">Connexion</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a href="#" class="nav-link primary-text py-0 px-5">Nous Contacter</a>

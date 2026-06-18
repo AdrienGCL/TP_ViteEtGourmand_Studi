@@ -14,7 +14,7 @@
                 </div>
                 <div class="row justify-content-center padding-t-l margin-b-l">
                     <div class="bouton bg-primary p-0 d-flex justify-content-center">
-                        <a class="text dark-text text-decoration-underline m-0 p-0" href="./index.php?controller=carte">Commander</a>
+                        <a class="text dark-text text-decoration-underline m-0 p-0" href="./index.php?controller=menu">Commander</a>
                     </div>
                 </div>
                 <?php require _ROOTPATH_.'\templates\separator.php'; ?>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="row justify-content-center padding-t-l margin-b-l">
                     <div class="bouton bg-primary p-0 d-flex justify-content-center">
-                        <a class="text dark-text text-decoration-underline m-0 p-0" href="./index.php?controller=carte">Commander</a>
+                        <a class="text dark-text text-decoration-underline m-0 p-0" href="./index.php?controller=menu">Commander</a>
                     </div>
                 </div>
                 <?php require _ROOTPATH_.'\templates\separator.php'; ?>
