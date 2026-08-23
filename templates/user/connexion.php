@@ -31,11 +31,7 @@
             <p><?="Utilisateur ou mot de passe incorrect, merci de bien vouloir vérifier les champs et réessayer.<br>Si vous n'avez pas encore de compte, "; ?><a href="./index.php?controller=connexion&action=inscription">inscrivez-vous !</a></p>
         </div>
         <?php } ?>
-        <?php if(isset($isAutorised) && $isAutorised === false){ ?>
-        <div class="d-flex col-auto alert alert-danger justify-content-center margin-t-l" role="alert">
-            <p><?="Ce compte est suspendu, merci de bien vouloir nous contacter pour plus d'informations.";?></p>
-        </div>
-        <?php } ?>
+        
     </form>
     <div class="d-flex justify-content-center margin-t-l">
         <svg class="col-10 margin-b-0 p-0" height="2" xmlns="http://www.w3.org/2000/svg">

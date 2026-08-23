@@ -2,41 +2,50 @@
 
 namespace app\controller;
 
-use app\repository\HoraireRepository;
+use app\repository\horaireRepository;
+use app\core\session;
+use app\tools\Redirect;
 
 class Controller
 {
+
+    protected Session $session;
+
+    public function __construct(Session $session)
+    {
+        $this->session = $session;
+    }
+
     public function route():void
     {
         try{
-            if(isset($_GET['controller'])){
-                // On vérifie l'existence du paramètre
-                switch($_GET['controller']){
-                    case 'home':
-                        // charge le controller home
-                        $homeController = new HomeController();
-                        $homeController->route();
-                    break;
-                    case 'menu':
-                        // charge le controller home
-                        $menuController = new MenuController();
-                        $menuController->route();
-                    break;
-                    case 'connexion':
-                        // charge le controller home
-                        $connexionController = new ConnexionController();
-                        $connexionController->route();
-                    break;
-                    default:
-                        throw new \Exception("La page demandée n'existe pas");
-                    break;
-                }
+            // On vérifie l'existence du paramètre
+            switch($_GET['controller']  ?? 'home'){
+                case 'home':
+                    // charge le controller home
+                    $controller = new HomeController($this->session);
+                break;
+                case 'menu':
+                    // charge le controller menu
+                    $controller = new MenuController($this->session);
+                break;
+                case 'connexion':
+                    // charge le controller connexion
+                    $controller = new ConnexionController($this->session);
+                break;
+                case 'userpage':
+                    // charge le controller userpage
+                    $controller = new UserpageController($this->session);
+                break;
+                case 'authenticator':
+                    // charge le controller d'authentification
+                    $controller = new AuthController($this->session);
+                break;
+                default:
+                    throw new \Exception("La page demandée n'existe pas");
+                break;
             }
-            else {
-                //Chargement de la page d'accueil en absence de paramètre
-                $homeController = new HomeController();
-                $homeController->route();
-            }
+            $controller->route();
 
         } catch (\Exception $e){
             //Gestion des erreurs
@@ -44,6 +53,11 @@ class Controller
                 'error' => $e->getMessage()
             ]);
         }
+    }
+
+    protected function index():void
+    {
+        Redirect::to('home','index');
     }
 
     protected function getHoraire():array

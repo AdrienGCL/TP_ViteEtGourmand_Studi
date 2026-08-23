@@ -28,7 +28,7 @@
                         <a href="./index.php?controller=menu&action=showAll" class="nav-link primary-text p-0">Nos Menus</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./index.php?controller=espacePerso" class="nav-link primary-text p-0">Mon Espace</a>
+                        <a href="./index.php?controller=userpage" class="nav-link primary-text p-0">Mon Espace</a>
                     </li>
                     <li class="nav-item">
                         <a href="./index.php?controller=connexion&action=connexion" class="nav-link primary-text p-0">Connexion</a>

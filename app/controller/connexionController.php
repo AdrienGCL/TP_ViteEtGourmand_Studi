@@ -3,6 +3,9 @@
 namespace app\controller;
 
 use app\repository\userRepository;
+use app\core\session;
+use app\controller\UserpageController;
+use app\tools\Redirect;
 
 class ConnexionController extends Controller
 {
@@ -26,7 +29,7 @@ class ConnexionController extends Controller
                 }
             } else {
                 // charge le controller home
-                $homeController = new HomeController();
+                $homeController = new HomeController($this->session);
                 $homeController->route();
             }
         } catch(\Exception $e) {
@@ -41,7 +44,7 @@ class ConnexionController extends Controller
         // Connexion
             // Vérification de l'envoi du formulaire
             if(isset($_POST['loginUser'])){
-                $userRepository = new userRepository;
+                $userRepository = new userRepository();
                 $existingUser = $userRepository -> checkExistingUser($_POST['identifiant']);
                 // Si l'utilisateur existe
                 if($existingUser){
@@ -57,10 +60,14 @@ class ConnexionController extends Controller
                         $isAutorised = $user->verifyStatut();
                         switch($isAutorised){
                             case true:
-                                print_r("Successfull !");
+                                session_regenerate_id(true);
+                                $this->session->login($user);
+                                Redirect::to('authenticator', 'connexion');
                                 break;
                             case false:
-                                $this->render('user/connexion', ['isAutorised' => $isAutorised]);
+                                $this->render('errors/default', [
+                                    'error' => "Cher client, ce compte est malheureusement suspendu, merci de bien vouloir nous contacter pour plus d'informations."
+                                ]);
                                 break;
                         }
                     }
@@ -71,7 +78,12 @@ class ConnexionController extends Controller
                 }
             }
             else{
-                $this->render('user/connexion', []);
+                if($this->session->isAuthenticated()){
+                    Redirect::to('authenticator', 'connexion');
+                }
+                else{
+                    $this->render('user/connexion', []);
+                }
             }
     }
 
@@ -80,7 +92,7 @@ class ConnexionController extends Controller
         // Inscription
             // Vérification de l'envoi du formulaire
             if (isset($_POST['Signin'])){
-                $userRepository = new userRepository;
+                $userRepository = new userRepository();
                 // Vérifie si l'utilisateur existe déjà
                 $existingUser = $userRepository -> checkExistingUser($_POST['mail']);
                 if($existingUser){

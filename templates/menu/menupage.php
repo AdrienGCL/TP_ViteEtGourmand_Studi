@@ -65,7 +65,7 @@
                 </div>
                 <div class="row justify-content-center padding-t-l">
                     <div class="bouton bg-primary p-0 d-flex justify-content-center">
-                        <a class="text dark-text text-decoration-underline m-0 p-0" href="./index.php?controller=carte&action=showOne&id=<?php echo($menus[$i]->getId()) ?>">Voir le menu</a>
+                        <a class="text dark-text text-decoration-underline m-0 p-0" href="./index.php?controller=menu&action=showOne&id=<?php echo($menus[$i]->getId()) ?>">Voir le menu</a>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
