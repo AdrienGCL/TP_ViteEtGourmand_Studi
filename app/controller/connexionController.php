@@ -110,5 +110,8 @@ class ConnexionController extends Controller
     }
 
     protected function deconnexion()
-    {}
+    {
+        $this->session->logout();
+        Redirect::to('connexion', 'connexion');
+    }
 }

@@ -27,12 +27,18 @@
                     <li class="nav-item">
                         <a href="./index.php?controller=menu&action=showAll" class="nav-link primary-text p-0">Nos Menus</a>
                     </li>
+                    <?php if(isset($_SESSION['user_id'])){ ?>
                     <li class="nav-item">
                         <a href="./index.php?controller=userpage" class="nav-link primary-text p-0">Mon Espace</a>
                     </li>
                     <li class="nav-item">
+                        <a href="./index.php?controller=connexion&action=deconnexion" class="nav-link primary-text p-0">Déconnexion</a>
+                    </li>
+                    <?php } else { ?>
+                    <li class="nav-item">
                         <a href="./index.php?controller=connexion&action=connexion" class="nav-link primary-text p-0">Connexion</a>
                     </li>
+                    <?php } ?>
                     <!-- <li class="nav-item">
                         <a href="#" class="nav-link primary-text py-0 px-5">Nous Contacter</a>
                     </li> -->
