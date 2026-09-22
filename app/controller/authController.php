@@ -44,14 +44,14 @@ class AuthController extends Controller
                 'redirect_after_login',
                 [
                     'controller' => 'commande',
-                    'action' => 'index'
+                    'action' => 'show'
                 ]
             );
 
             Redirect::to('connexion', 'connexion');
         }
 
-        Redirect::to('commande', 'index');
+        Redirect::to('commande', 'show');
     }
 
     protected function connexion():void

@@ -10,6 +10,35 @@ use Exception;
 
 Class UserRepository
 {
+
+    // Get user selon son id
+    public function getUserById(int $id)
+    {
+        try{
+            // Appel bdd
+            $mysql = mysql::getInstance();
+            $pdo = $mysql->getPDO();
+
+            $requete = 'SELECT * FROM user WHERE user_id = :id';
+
+            $query = $pdo->prepare($requete);
+            
+            // bindvalue
+            $query->bindValue(':id', $id, $pdo::PARAM_INT);
+            
+            $query->execute();
+
+            $newUser = new User;
+            $user = $newUser->fromArray($query->fetch($pdo::FETCH_ASSOC));
+                
+            return $user;
+        }
+        catch(\Exception $e){
+            // Gestion des erreurs
+        }
+    }
+
+
     // Get users selon une liste d'id
     public function getUserNameById(array $idList = [])
     {

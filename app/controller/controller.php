@@ -41,6 +41,10 @@ class Controller
                     // charge le controller d'authentification
                     $controller = new AuthController($this->session);
                 break;
+                case 'commande':
+                    // charge le controller d'authentification
+                    $controller = new commandeController($this->session);
+                break;
                 default:
                     throw new \Exception("La page demandée n'existe pas");
                 break;
