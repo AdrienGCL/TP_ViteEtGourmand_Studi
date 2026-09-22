@@ -2,8 +2,8 @@
 
     namespace app\controller;
 
-    use app\repository\userRepository;
-    use app\core\session;
+    use app\repository\UserRepository;
+    use app\core\Session;
 
     class UserpageController extends Controller
     {

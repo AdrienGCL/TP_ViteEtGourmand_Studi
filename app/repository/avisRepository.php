@@ -2,8 +2,8 @@
 
 namespace app\repository;
 
-use app\entity\avis;
-use app\db\mysql;
+use app\entity\Avis;
+use app\db\Mysql;
 
 class AvisRepository
 {
@@ -11,7 +11,7 @@ class AvisRepository
 
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT * FROM avis WHERE statut = :statut ORDER BY avis_id DESC, note DESC';

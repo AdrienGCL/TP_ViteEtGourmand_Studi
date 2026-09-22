@@ -1,4 +1,4 @@
-<?php require_once _ROOTPATH_.'\templates\header.php'; ?>
+<?php require_once _ROOTPATH_.'/templates/header.php'; ?>
 
 <main>
     <form id="registerForm" class="row text justify-content-center" action="" method="post">
@@ -64,7 +64,7 @@
         </div>
         <?php } ?>
     </form>
-    <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+    <?php require _ROOTPATH_.'/templates/separator.php'; ?>
 </main>
 
-<?php require_once _ROOTPATH_.'\templates\footer.php'; ?>
+<?php require_once _ROOTPATH_.'/templates/footer.php'; ?>

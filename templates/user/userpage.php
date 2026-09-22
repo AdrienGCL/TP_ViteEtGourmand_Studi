@@ -1,4 +1,4 @@
-<?php require_once _ROOTPATH_.'\templates\header.php'; ?>
+<?php require_once _ROOTPATH_.'/templates/header.php'; ?>
 
 <main>
     <div class="row justify-content-center margin-t-l">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+                <?php require _ROOTPATH_.'/templates/separator.php'; ?>
             </div>
             <div class="row">
                 <div class="row margin-t-l margin-b-l">
@@ -55,7 +55,7 @@
                     <p class="col text white-text p-0 m-0 fit text-center">En préparation</p>
                     <div class="col d-flex p-0 m-0 justify-content-end"></div>
                 </div>
-                <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+                <?php require _ROOTPATH_.'/templates/separator.php'; ?>
             </div>
             <div class="row bg-extra-dark">
                 <div class="row margin-t-l margin-b-l">
@@ -73,7 +73,7 @@
                 <div class="row mx-0 align-items-center justify-content-between">
                     <a class="col text white-text p-0 m-0 fit cursor-default" href="">Commande n° xxxxx du xx/xx/xxxx</a>
                 </div>
-                <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+                <?php require _ROOTPATH_.'/templates/separator.php'; ?>
             </div>
         </div>
     </div>
@@ -89,8 +89,8 @@
                 </div>
             </div>
         </div>
-        <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+        <?php require _ROOTPATH_.'/templates/separator.php'; ?>
     </div>
 </main>
 
-<?php require_once _ROOTPATH_.'\templates\footer.php'; ?>
+<?php require_once _ROOTPATH_.'/templates/footer.php'; ?>

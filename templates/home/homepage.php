@@ -1,4 +1,4 @@
-<?php require_once _ROOTPATH_.'\templates\header.php'; ?>
+<?php require_once _ROOTPATH_.'/templates/header.php'; ?>
 
 
     <main>
@@ -9,7 +9,7 @@
                         <p class="mx-0 margin-t-l p-0 text white-text">Vite & Gourmand, traiteur d’exception à Bordeaux depuis 25 ans, est le fruit de la passion et du savoir-faire de Julie et José. Animés par l’amour des beaux produits et du travail bien fait, ils imaginent des créations culinaires raffinées pour sublimer chaque événement.<br><br>Mariages, réceptions privées, repas d’entreprise, fêtes de fin d’année ou célébrations familiales : chaque prestation est conçue comme une expérience sur mesure, alliant élégance, créativité et exigence. Au fil des saisons, la carte évolue pour mettre à l’honneur des produits soigneusement sélectionnés et des associations de saveurs délicates.<br><br>Avec Vite & Gourmand, l’art de recevoir prend toute sa dimension.</p>
                     </article>
                     <div class="col-4 margin-l-m p-0">
-                        <img class="img-main" src="<?php _ROOTPATH_ ?>/assets/img/table.jpg" alt="Photographie d'un repas">
+                        <img class="img-main" src="<?php _ROOTPATH_ ?>assets/img/table.jpg" alt="Photographie d'un repas">
                     </div>
                 </div>
                 <div class="row justify-content-center padding-t-l margin-b-l">
@@ -17,12 +17,12 @@
                         <a class="text dark-text text-decoration-underline m-0 p-0" href="./index.php?controller=menu">Commander</a>
                     </div>
                 </div>
-                <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+                <?php require _ROOTPATH_.'/templates/separator.php'; ?>
             </section>
             <section>
                 <div class="row justify-content-center padding-t-l">
                     <div class="col-4 margin-r-m p-0">
-                        <img class="img-main" src="<?php _ROOTPATH_ ?>/assets/img/equipe.jpg" alt="Photographie de l'équipe">
+                        <img class="img-main" src="<?php _ROOTPATH_ ?>assets/img/equipe.jpg" alt="Photographie de l'équipe">
                     </div>
                     <article class="col-4 margin-l-m p-0">
                         <h2 class="row justify-content-center headline primary-text">L'équipe</h2>
@@ -34,7 +34,7 @@
                         <a class="text dark-text text-decoration-underline m-0 p-0" href="./index.php?controller=menu">Commander</a>
                     </div>
                 </div>
-                <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+                <?php require _ROOTPATH_.'/templates/separator.php'; ?>
             </section>
 
             <section class="padding-t-l bg-extra-dark">
@@ -72,8 +72,8 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-                <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+                <?php require _ROOTPATH_.'/templates/separator.php'; ?>
             </section>
         </main>
 
-<?php require_once _ROOTPATH_.'\templates\footer.php'; ?>
+<?php require_once _ROOTPATH_.'/templates/footer.php'; ?>

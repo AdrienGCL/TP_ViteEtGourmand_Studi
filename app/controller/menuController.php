@@ -2,14 +2,14 @@
 
     namespace app\controller;
 
-    use app\repository\menuRepository;
-    use app\repository\themeRepository;
-    use app\repository\regimeRepository;
-    use app\repository\platRepository;
-    use app\repository\entreeRepository;
-    use app\repository\dessertRepository;
-    use app\repository\allergeneRepository;
-    use App\tools\arrayTools;
+    use app\repository\MenuRepository;
+    use app\repository\ThemeRepository;
+    use app\repository\RegimeRepository;
+    use app\repository\PlatRepository;
+    use app\repository\EntreeRepository;
+    use app\repository\DessertRepository;
+    use app\repository\AllergeneRepository;
+    use app\tools\ArrayTools;
 
 
     class MenuController extends Controller

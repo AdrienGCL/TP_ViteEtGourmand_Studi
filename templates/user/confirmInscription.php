@@ -1,4 +1,4 @@
-<?php require_once _ROOTPATH_.'\templates\header.php'; ?>
+<?php require_once _ROOTPATH_.'/templates/header.php'; ?>
 
 <main>
     <div class="margin-t-l margin-b-l">
@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+    <?php require _ROOTPATH_.'/templates/separator.php'; ?>
 </main>
 
-<?php require_once _ROOTPATH_.'\templates\footer.php'; ?>
+<?php require_once _ROOTPATH_.'/templates/footer.php'; ?>

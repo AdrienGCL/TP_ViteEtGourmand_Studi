@@ -2,15 +2,15 @@
 
 namespace app\repository;
 
-use app\entity\dessert;
-use app\Db\mysql;
+use app\entity\Dessert;
+use app\Db\Mysql;
 
 class DessertRepository extends PlatRepository
 {
     public function getSinglePlat(int $id){
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT * FROM dessert WHERE dessert_id = :id';

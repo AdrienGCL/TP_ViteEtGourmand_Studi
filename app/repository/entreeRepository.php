@@ -2,15 +2,15 @@
 
 namespace app\repository;
 
-use app\entity\entree;
-use app\Db\mysql;
+use app\entity\Entree;
+use app\db\Mysql;
 
 class EntreeRepository extends PlatRepository
 {
     public function getSinglePlat(int $id){
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT * FROM entree WHERE entree_id = :id';

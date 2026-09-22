@@ -2,7 +2,7 @@
 
 namespace app\controller;
 
-use app\core\session;
+use app\core\Session;
 use app\tools\Redirect;
 
 class AuthController extends Controller

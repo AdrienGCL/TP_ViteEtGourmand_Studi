@@ -2,7 +2,7 @@
 
 namespace app\tools;
 
-class requestTools
+class RequestTools
 {
     public static function buildFromIdList(array $idList, string $requete)
     {

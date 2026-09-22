@@ -2,8 +2,8 @@
 
 namespace app\controller;
 
-use app\repository\userRepository;
-use app\core\session;
+use app\repository\UserRepository;
+use app\core\Session;
 use app\controller\UserpageController;
 use app\tools\Redirect;
 
@@ -44,7 +44,7 @@ class ConnexionController extends Controller
         // Connexion
             // Vérification de l'envoi du formulaire
             if(isset($_POST['loginUser'])){
-                $userRepository = new userRepository();
+                $userRepository = new UserRepository();
                 $existingUser = $userRepository -> checkExistingUser($_POST['identifiant']);
                 // Si l'utilisateur existe
                 if($existingUser){
@@ -92,7 +92,7 @@ class ConnexionController extends Controller
         // Inscription
             // Vérification de l'envoi du formulaire
             if (isset($_POST['Signin'])){
-                $userRepository = new userRepository();
+                $userRepository = new UserRepository();
                 // Vérifie si l'utilisateur existe déjà
                 $existingUser = $userRepository -> checkExistingUser($_POST['mail']);
                 if($existingUser){

@@ -2,9 +2,6 @@
 
 namespace app\entity;
 
-use App\Tools\StringTools;
-use App\Tools\stringTools as ToolsStringTools;
-
 class Avis
 {
     protected ?int $id = null;

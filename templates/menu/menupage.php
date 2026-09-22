@@ -1,4 +1,4 @@
-<?php require_once _ROOTPATH_.'\templates\header.php'; ?>
+<?php require_once _ROOTPATH_.'/templates/header.php'; ?>
 
 <main>
     <section>
@@ -84,7 +84,7 @@
     </section>
 </main>
 
-<script src=".\assets\js\menuFilter.js" defer></script>
+<script src="./assets/js/menuFilter.js" defer></script>
 
 
-<?php require_once _ROOTPATH_.'\templates\footer.php'; ?>
+<?php require_once _ROOTPATH_.'/templates/footer.php'; ?>

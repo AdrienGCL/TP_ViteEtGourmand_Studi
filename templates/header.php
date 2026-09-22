@@ -18,7 +18,7 @@
             <div class="d-flex justify-content-center margin-b-l">
                 <h1 class="brand-l primary-text m-0">Vite & Gourmand</h1>
             </div>
-            <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+            <?php require _ROOTPATH_.'/templates/separator.php'; ?>
             <div class="d-flex justify-content-center margin-t-l margin-b-l">
                 <ul class="nav nav-pills headline w-100 justify-content-around padding-l-l padding-r-l">
                     <li class="nav-item">
@@ -44,5 +44,5 @@
                     </li> -->
                 </ul>
             </div>
-            <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+            <?php require _ROOTPATH_.'/templates/separator.php'; ?>
         </header>

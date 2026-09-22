@@ -2,15 +2,15 @@
 
 namespace app\repository;
 
-use app\entity\theme;
-use app\Db\mysql;
+use app\entity\Theme;
+use app\Db\Mysql;
 
 class ThemeRepository
 {
     public function getAllTheme(){
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT * FROM theme';
@@ -33,7 +33,7 @@ class ThemeRepository
     public function getSingleTheme(int $id){
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT * FROM theme WHERE theme_id = :id';

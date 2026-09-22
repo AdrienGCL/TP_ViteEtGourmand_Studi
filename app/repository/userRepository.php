@@ -3,8 +3,8 @@
 namespace app\repository;
 
 use app\entity\User;
-use app\Db\Mysql;
-use app\tools\requestTools;
+use app\db\Mysql;
+use app\tools\RequestTools;
 use app\tools\StringTools;
 use Exception;
 
@@ -16,7 +16,7 @@ Class UserRepository
     {
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT * FROM user WHERE user_id = :id';
@@ -44,7 +44,7 @@ Class UserRepository
     {
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requeteTemplate = 'SELECT user_id, prenom, nom FROM user WHERE user_id IN (';
@@ -75,7 +75,7 @@ Class UserRepository
     {
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT mail FROM user WHERE mail = :email';
@@ -105,7 +105,7 @@ Class UserRepository
     {
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT * FROM user WHERE mail = :email';
@@ -119,7 +119,7 @@ Class UserRepository
 
             $userAnswer = $query->fetch($pdo::FETCH_ASSOC);
             if(password_verify($mdp, $userAnswer['password'])){
-                $user = new user;
+                $user = new User;
                 $user->fromArray($userAnswer);
 
                 return $user;
@@ -139,7 +139,7 @@ Class UserRepository
     {
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'INSERT INTO user (prenom, nom, telephone, mail, adresse, code_postale, ville, pays, password) VALUES (:prenom, :nom, :phone, :email, :adresse, :cp, :ville, :pays, :mdp)';

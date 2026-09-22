@@ -2,15 +2,15 @@
 
 namespace app\repository;
 
-use app\entity\plat;
-use app\Db\mysql;
+use app\entity\Plat;
+use app\Db\Mysql;
 
 class PlatRepository
 {
     public function getSinglePlat(int $id){
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT * FROM plat WHERE plat_id = :id';

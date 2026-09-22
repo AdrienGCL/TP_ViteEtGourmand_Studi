@@ -2,11 +2,11 @@
 
 namespace app\repository;
 
-use app\entity\allergene;
-use app\db\mysql;
-use app\tools\requestTools;
+use app\entity\Allergene;
+use app\db\Mysql;
+use app\tools\RequestTools;
 
-class allergeneRepository
+class AllergeneRepository
 {
     public function getPlatAllergenes(int $platId, string $plat){
         try{
@@ -55,7 +55,7 @@ class allergeneRepository
     {
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requeteTemplate = 'SELECT * FROM allergenes WHERE allergene_id IN (';

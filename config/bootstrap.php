@@ -10,7 +10,7 @@ $dotenv->load();
 session_set_cookie_params([
     'lifetime' => 0,
     'path' => '/',
-    'secure' => false,      // HTTPS uniquement
+    'secure' => true,      // HTTPS uniquement
     'httponly' => true,    // inaccessible en JavaScript
     'samesite' => 'Lax'
 ]);

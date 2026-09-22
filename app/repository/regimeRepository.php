@@ -2,16 +2,15 @@
 
 namespace app\repository;
 
-use app\entity\regime;
-use app\Db\mysql;
-use app\entity\Regime as EntityRegime;
+use app\entity\Regime;
+use app\Db\Mysql;
 
 class RegimeRepository
 {
     public function getAllRegime(){
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT * FROM regime';
@@ -35,7 +34,7 @@ class RegimeRepository
     public function getSingleRegime(int $id){
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT * FROM regime WHERE regime_id = :id';

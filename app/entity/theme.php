@@ -2,7 +2,7 @@
 
 namespace app\entity;
 
-class theme
+class Theme
 {
     protected ?int $id = null;
     protected string $libelle = '';

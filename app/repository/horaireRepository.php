@@ -2,15 +2,15 @@
 
 namespace app\repository;
 
-use app\entity\horaire;
-use App\Db\Mysql;
+use app\entity\Horaire;
+use App\db\Mysql;
 
 class HoraireRepository
 {
     public function getAllHoraires(){
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT * FROM horaire';

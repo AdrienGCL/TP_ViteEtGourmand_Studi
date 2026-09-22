@@ -3,14 +3,14 @@
 namespace app\repository;
 
 use app\db\Mysql;
-use app\entity\menu;
+use app\entity\Menu;
 
 class MenuRepository
 {
     public function getAllMenus(){
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT * FROM menu';
@@ -33,7 +33,7 @@ class MenuRepository
     public function getSingleMenu(int $id){
         try{
             // Appel bdd
-            $mysql = mysql::getInstance();
+            $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
             $requete = 'SELECT * FROM menu WHERE menu_id = :id';

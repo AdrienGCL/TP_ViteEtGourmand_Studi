@@ -1,9 +1,9 @@
 <?php
 
-    namespace app\controller;
+namespace app\controller;
 
-use app\repository\avisRepository;
-use app\repository\userRepository;
+use app\repository\AvisRepository;
+use app\repository\UserRepository;
 
     class HomeController extends Controller
     {

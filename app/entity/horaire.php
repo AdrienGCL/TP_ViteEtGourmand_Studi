@@ -2,7 +2,7 @@
 
 namespace app\entity;
 
-class horaire{
+class Horaire{
     protected ?int $id = null;
     protected string $jour = '';
     protected string $ouverture = '';

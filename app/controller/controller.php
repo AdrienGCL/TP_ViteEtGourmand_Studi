@@ -2,8 +2,8 @@
 
 namespace app\controller;
 
-use app\repository\horaireRepository;
-use app\core\session;
+use app\repository\HoraireRepository;
+use app\core\Session;
 use app\tools\Redirect;
 
 class Controller
@@ -43,7 +43,7 @@ class Controller
                 break;
                 case 'commande':
                     // charge le controller d'authentification
-                    $controller = new commandeController($this->session);
+                    $controller = new CommandeController($this->session);
                 break;
                 default:
                     throw new \Exception("La page demandée n'existe pas");

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tools;
+namespace app\tools;
 
 class StringTools
 {

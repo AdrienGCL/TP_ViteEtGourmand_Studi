@@ -1,4 +1,4 @@
-<?php require_once _ROOTPATH_.'\templates\header.php'; ?>
+<?php require_once _ROOTPATH_.'/templates/header.php'; ?>
 
 <main>
             <form id="commandeForm" class="row text justify-content-center" action="" method="post">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
 
-                <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+                <?php require _ROOTPATH_.'/templates/separator.php'; ?>
 
                 <div class="row justify-content-center">
                     <div class="col-10 col-md-4 col-">
@@ -136,7 +136,7 @@
                 </div>
             </form>
 
-            <?php require _ROOTPATH_.'\templates\separator.php'; ?>
+            <?php require _ROOTPATH_.'/templates/separator.php'; ?>
 
         </main>
 
@@ -144,6 +144,6 @@
             let singleMenuPrice = <?php echo($menu->getPrix()) ?>;
         </script>
 
-        <script src=".\assets\js\commandeTools.js" defer></script>
+        <script src="./assets/js/commandeTools.js" defer></script>
 
-        <?php require_once _ROOTPATH_.'\templates\footer.php'; ?>
+        <?php require_once _ROOTPATH_.'/templates/footer.php'; ?>
