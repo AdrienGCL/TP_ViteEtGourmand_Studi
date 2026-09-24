@@ -1,0 +1,195 @@
+# PROMPTS DE GÉNÉRATION D’IMAGES – PROJET APPLICATION TRAITEUR
+# Style commun : photo culinaire réaliste, traiteur professionnel, fond neutre, éclairage doux
+# Format recommandé : JPEG – 1024x1024 – sans texte, sans personnes
+
+--------------------------------
+SALADES & ENTRÉES
+--------------------------------
+
+salade_chevre_chaud.jpg
+Photo culinaire réaliste d’une salade de chèvre chaud, fromage de chèvre fondant sur toasts, salade verte fraîche, assiette blanche élégante, fond neutre clair, éclairage naturel doux, style traiteur professionnel.
+
+veloute_potimarron.jpg
+Photo culinaire réaliste d’un velouté de potimarron, texture crémeuse, servi dans un bol élégant, graines de courge en décoration, fond neutre clair, éclairage doux, style gastronomique.
+
+foie_gras_figues.jpg
+Photo culinaire réaliste de foie gras de canard accompagné de chutney de figues, dressage raffiné, assiette blanche, ambiance festive, éclairage professionnel doux.
+
+feuillete_champignons.jpg
+Photo culinaire réaliste d’un feuilleté aux champignons doré, présenté sur assiette blanche, fond neutre clair, éclairage naturel.
+
+oeufs_mimosa.jpg
+Photo culinaire réaliste d’œufs mimosa, présentation soignée, assiette blanche, fond clair, style traiteur.
+
+houmous_crudites.jpg
+Photo culinaire réaliste de houmous accompagné de crudités fraîches, présentation colorée, bol moderne, fond neutre clair.
+
+tartare_saumon.jpg
+Photo culinaire réaliste d’un tartare de saumon, dressage raffiné, assiette élégante, fond clair, style gastronomique.
+
+salade_pates.jpg
+Photo culinaire réaliste d’une salade de pâtes, légumes frais, présentation simple et conviviale, fond neutre clair.
+
+gaspacho_tomate.jpg
+Photo culinaire réaliste d’un gaspacho de tomates, servi froid, bol élégant, fond clair, éclairage doux.
+
+taboule_libanais.jpg
+Photo culinaire réaliste d’un taboulé libanais, persil frais, tomates, semoule, présentation colorée.
+
+soupe_oignon.jpg
+Photo culinaire réaliste d’une soupe à l’oignon gratinée, bol traditionnel, fromage fondu, fond neutre.
+
+carottes_rapees.jpg
+Photo culinaire réaliste de carottes râpées assaisonnées, présentation simple, assiette blanche.
+
+bruschetta_tomate.jpg
+Photo culinaire réaliste de bruschettas à la tomate, pain grillé, basilic frais, style méditerranéen.
+
+saint_jacques.jpg
+Photo culinaire réaliste de noix de Saint-Jacques poêlées, dressage raffiné, assiette élégante.
+
+asperges_vinaigrette.jpg
+Photo culinaire réaliste d’asperges servies avec vinaigrette, présentation printanière.
+
+terrine_campagne.jpg
+Photo culinaire réaliste d’une terrine de campagne, tranches nettes, assiette rustique.
+
+soupe_legumes.jpg
+Photo culinaire réaliste d’une soupe de légumes maison, bol simple, fond clair.
+
+salade_caprese.jpg
+Photo culinaire réaliste d’une salade caprese, tomates, mozzarella, basilic, style italien.
+
+wrap_thon.jpg
+Photo culinaire réaliste d’un wrap au thon coupé en deux, présentation moderne.
+
+carpaccio_legumes.jpg
+Photo culinaire réaliste d’un carpaccio de légumes, fines tranches colorées, assiette blanche.
+
+--------------------------------
+PLATS PRINCIPAUX
+--------------------------------
+
+supreme_poulet_roti.jpg
+Photo culinaire réaliste d’un suprême de poulet rôti accompagné de pommes grenailles, dressage traiteur, assiette blanche, fond clair.
+
+lasagnes_legumes.jpg
+Photo culinaire réaliste de lasagnes aux légumes grillés, part découpée, fromage gratiné.
+
+dinde_marrons.jpg
+Photo culinaire réaliste d’une dinde farcie aux marrons, présentation festive.
+
+risotto_cepes.jpg
+Photo culinaire réaliste d’un risotto aux cèpes, texture crémeuse, copeaux de parmesan.
+
+gigot_agneau.jpg
+Photo culinaire réaliste d’un gigot d’agneau rôti, légumes de saison, style traditionnel.
+
+curry_legumes.jpg
+Photo culinaire réaliste d’un curry de légumes et pois chiches, bol moderne, couleurs chaudes.
+
+filet_boeuf_morilles.jpg
+Photo culinaire réaliste d’un filet de bœuf sauce morilles, dressage gastronomique.
+
+saute_volaille.jpg
+Photo culinaire réaliste d’un sauté de volaille, sauce légère, assiette simple.
+
+quiche_legumes.jpg
+Photo culinaire réaliste d’une quiche aux légumes, part découpée, fond clair.
+
+burger_vegan.jpg
+Photo culinaire réaliste d’un burger végan gourmet, pain végétal, légumes frais.
+
+boeuf_bourguignon.jpg
+Photo culinaire réaliste d’un bœuf bourguignon, sauce riche, présentation traditionnelle.
+
+nuggets_poulet.jpg
+Photo culinaire réaliste de nuggets de poulet, présentation simple, style menu enfants.
+
+ratatouille.jpg
+Photo culinaire réaliste d’une ratatouille maison, légumes mijotés, style provençal.
+
+chapon_roti.jpg
+Photo culinaire réaliste d’un chapon rôti, présentation festive de Noël.
+
+omelette_fines_herbes.jpg
+Photo culinaire réaliste d’une omelette aux fines herbes, présentation simple.
+
+saucisse_puree.jpg
+Photo culinaire réaliste de saucisse accompagnée de purée, style cuisine rustique.
+
+tofu_marine.jpg
+Photo culinaire réaliste de tofu mariné accompagné de riz, style végan moderne.
+
+spaghetti_bolognaise.jpg
+Photo culinaire réaliste de spaghetti bolognaise, présentation italienne.
+
+sandwich_club.jpg
+Photo culinaire réaliste d’un sandwich club, coupé en triangles.
+
+parmentier_vegetal.jpg
+Photo culinaire réaliste d’un parmentier végétal, présentation moderne.
+
+--------------------------------
+DESSERTS
+--------------------------------
+
+tarte_pommes.jpg
+Photo culinaire réaliste d’une tarte aux pommes maison, pâte dorée, style pâtisserie artisanale.
+
+mousse_chocolat.jpg
+Photo culinaire réaliste d’une mousse au chocolat, texture aérienne, verrine élégante.
+
+buche_chocolat_praline.jpg
+Photo culinaire réaliste d’une bûche de Noël chocolat praliné, décoration festive.
+
+buche_fruits_rouges.jpg
+Photo culinaire réaliste d’une bûche aux fruits rouges, présentation élégante.
+
+nid_paques_chocolat.jpg
+Photo culinaire réaliste d’un nid de Pâques en chocolat, décoration printanière.
+
+compote_fruits.jpg
+Photo culinaire réaliste d’une compote de fruits frais, bol simple.
+
+entremets_vanille_framboise.jpg
+Photo culinaire réaliste d’un entremets vanille-framboise, dressage raffiné.
+
+brownie_chocolat.jpg
+Photo culinaire réaliste d’un brownie au chocolat, texture fondante.
+
+salade_fruits.jpg
+Photo culinaire réaliste d’une salade de fruits frais, couleurs vives.
+
+cake_citron_vegan.jpg
+Photo culinaire réaliste d’un cake citron végan, tranche découpée.
+
+creme_brulee.jpg
+Photo culinaire réaliste d’une crème brûlée, sucre caramélisé.
+
+yaourt_sucre.jpg
+Photo culinaire réaliste d’un yaourt sucré, présentation simple.
+
+panna_cotta.jpg
+Photo culinaire réaliste d’une panna cotta, coulis léger.
+
+opera_chocolat.jpg
+Photo culinaire réaliste d’un gâteau opéra au chocolat, style pâtisserie française.
+
+fraises_sucre.jpg
+Photo culinaire réaliste de fraises au sucre, présentation minimaliste.
+
+riz_lait.jpg
+Photo culinaire réaliste d’un riz au lait, bol rustique.
+
+compote_pomme_poire.jpg
+Photo culinaire réaliste d’une compote pomme-poire, texture lisse.
+
+tiramisu.jpg
+Photo culinaire réaliste d’un tiramisu, verrine élégante.
+
+cookie_chocolat.jpg
+Photo culinaire réaliste d’un cookie au chocolat, style bakery.
+
+brownie_vegan.jpg
+Photo culinaire réaliste d’un brownie végan au chocolat, présentation minimaliste.
