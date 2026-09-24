@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS dbvitegourmand;
 
-CREATE USER 'vgadmin'@'localhost' IDENTIFIED BY 'VitGou!bddadmin2026';
-GRANT CREATE, SELECT, INSERT, UPDATE, DELETE ON dbvitegourmand.* TO 'vgadmin'@'localhost';
+CREATE USER '' IDENTIFIED BY '';
+GRANT CREATE, SELECT, INSERT, UPDATE, DELETE ON dbvitegourmand.* TO '';
 
 CREATE TABLE dbvitegourmand.horaire (
     horaire_id INT AUTO_INCREMENT PRIMARY KEY,
