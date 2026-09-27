@@ -2,6 +2,11 @@
 
 <main>
     <form id="registerForm" class="row text justify-content-center" action="" method="post">
+        <input
+            type="hidden"
+            name="csrf_token"
+            value="<?= htmlspecialchars($csrf->getToken(), ENT_QUOTES, 'UTF-8') ?>"
+        >
         <div class="row justify-content-center margin-t-l">
             <p class="col-auto headline primary-text m-0">Inscription</p>
         </div>

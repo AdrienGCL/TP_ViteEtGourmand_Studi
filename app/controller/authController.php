@@ -4,9 +4,18 @@ namespace app\controller;
 
 use app\core\Session;
 use app\tools\Redirect;
+use app\core\Csrf;
 
 class AuthController extends Controller
 {
+    protected Csrf $csrf;
+
+    public function __construct(Session $session)
+    {
+        parent::__construct($session);
+        $this->csrf = new Csrf($session);
+    }
+
     public function route(): void
     {
         try {
@@ -34,8 +43,20 @@ class AuthController extends Controller
 
     protected function commander():void
     {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            throw new \Exception('Méthode de requête invalide.');
+        }
+
+        if (!$this->csrf->validate($_POST['csrf_token'] ?? null)) {
+            throw new \Exception('Requête invalide.');
+        }
+
+        if (!isset($_POST['menuId'])) {
+            throw new \Exception('Menu non spécifié.');
+        }
+
         // On conserve le panier
-        $this->session->set('panier', $_GET['menuId']);
+        $this->session->set('panier', $_POST['menuId']);
 
         if (!$this->session->isAuthenticated()) {
 

@@ -5,6 +5,7 @@ namespace app\controller;
 use app\repository\HoraireRepository;
 use app\core\Session;
 use app\tools\Redirect;
+use app\core\Csrf;
 
 class Controller
 {
@@ -83,11 +84,15 @@ class Controller
             if (!file_exists($filePath)) {
                 // Si le fichier n'existe pas
                 throw new \Exception("Fichier non trouvé : ".$filePath);
-            } else {
-                // Extrait chaque ligne du tableau en argument et crée des variables pour chacune
-                extract($params);
-                require_once $filePath;
             }
+            
+            $csrf = new Csrf($this->session);
+
+            // Extrait chaque ligne du tableau en argument et crée des variables pour chacune
+            extract($params);
+            
+            require_once $filePath;
+
         } catch(\Exception $e) {
             $this->render('errors/default', [
                 'error' => $e->getMessage()
