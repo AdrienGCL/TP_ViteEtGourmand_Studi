@@ -32,7 +32,24 @@
                         <a href="./index.php?controller=userpage" class="nav-link primary-text p-0">Mon Espace</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./index.php?controller=connexion&action=deconnexion" class="nav-link primary-text p-0">Déconnexion</a>
+                        <form
+                            action="./index.php?controller=connexion&action=deconnexion"
+                            method="post"
+                            class="m-0"
+                        >
+                            <input
+                                type="hidden"
+                                name="csrf_token"
+                                value="<?= htmlspecialchars($csrf->getToken(), ENT_QUOTES, 'UTF-8') ?>"
+                            >
+
+                            <button
+                                type="submit"
+                                class="nav-link primary-text p-0 border-0 bg-transparent"
+                            >
+                                Déconnexion
+                            </button>
+                        </form>
                     </li>
                     <?php } else { ?>
                     <li class="nav-item">
