@@ -2,7 +2,7 @@
 
 <?php if($error) { ?>
     <div class="alert alert-danger text-center">
-        <?=$error; ?>
+        <?= htmlspecialchars($error, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
     </div>
 <?php } ?>
 

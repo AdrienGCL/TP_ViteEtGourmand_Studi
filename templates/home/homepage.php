@@ -53,10 +53,27 @@
                                 <div class="d-flex full-width justify-content-center">
                                     <div class="bg-primary padding-s margin-t-l radius-m">
                                         <h3 class="headline dark-text m-0 margin-b-s">
-                                            <?php echo($avis[$i]->getUserFirstname())?> <?php echo(substr($avis[$i]->getUserName(), 0, 1)) ?>. - <?php echo($avis[$i]->getNote()) ?>/5
+                                            <?= htmlspecialchars(
+                                                $avis[$i]->getUserFirstname(),
+                                                ENT_QUOTES | ENT_SUBSTITUTE,
+                                                'UTF-8'
+                                                )
+                                            ?> <?= htmlspecialchars(
+                                                substr($avis[$i]->getUserName(), 0, 1),
+                                                ENT_QUOTES | ENT_SUBSTITUTE,
+                                                'UTF-8')
+                                            ?>
+                                            . - <?php echo($avis[$i]->getNote()) ?>/5
                                         </h3>
                                         <div class="bg-light padding-m radius-m">
-                                            <p class="m-0 p-0 text white-text text-center"><?php echo($avis[$i]->getDescription())?></p>
+                                            <p class="m-0 p-0 text white-text text-center">
+                                                <?= htmlspecialchars(
+                                                    $avis[$i]->getDescription(),
+                                                    ENT_QUOTES | ENT_SUBSTITUTE,
+                                                    'UTF-8'
+                                                    )
+                                                ?>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

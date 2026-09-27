@@ -25,7 +25,7 @@
                         <select class="customInput" name="themeList" id="themeList">
                             <option value="">Thème</option>
                             <?php for($i = 0; $i<count($themes); $i++){ ?>
-                            <option value="<?php echo($themes[$i]->getId()) ?>"><?php echo($themes[$i]->getLibelle()) ?></option>
+                            <option value="<?= $themes[$i]->getId() ?>"><?= htmlspecialchars($themes[$i]->getLibelle(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -33,7 +33,7 @@
                         <select class="customInput" name="regimeList" id="regimeList">
                             <option value="">Régime</option>
                             <?php for($i = 0; $i<count($regimes); $i++){ ?>
-                            <option value="<?php echo($regimes[$i]->getId()) ?>"><?php echo($regimes[$i]->getLibelle()) ?></option>
+                            <option value="<?= $regimes[$i]->getId() ?>"><?= htmlspecialchars($regimes[$i]->getLibelle(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -52,16 +52,16 @@
             
     <section id="menusListeDiv">
         <?php for($i = 0; $i<count($menus); $i++){ ?>
-            <div class="menuShort margin-t-l" data-prix="<?php echo($menus[$i]->getPrix()) ?>" data-theme="<?php echo($menus[$i]->getTheme()) ?>" data-regime="<?php echo($menus[$i]->getRegime()) ?>" data-quantite="<?php echo($menus[$i]->getQuantiteDispo()) ?>">
+            <div class="menuShort margin-t-l" data-prix="<?= $menus[$i]->getPrix() ?>" data-theme="<?= $menus[$i]->getTheme() ?>" data-regime="<?= $menus[$i]->getRegime() ?>" data-quantite="<?= $menus[$i]->getQuantiteDispo() ?>">
                 <div class="row justify-content-center">
-                    <p class="headline primary-text col-auto margin-b-s"><?php echo($menus[$i]->getTitre()) ?></p>
+                    <p class="headline primary-text col-auto margin-b-s"><?= htmlspecialchars($menus[$i]->getTitre(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></p>
                 </div>
                 <div class="row justify-content-center">
-                    <p class="text white-text col-auto m-0"><?php echo($menus[$i]->getDescription()) ?></p>
+                    <p class="text white-text col-auto m-0"><?= htmlspecialchars($menus[$i]->getDescription(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></p>
                 </div>
                 <div class="row justify-content-center padding-t-l">
-                    <p class="text white-text col-auto m-0"><?php echo($menus[$i]->getQuantiteMin()) ?> minimum</p>
-                    <p class="headline secondary-text col-auto m-0"><?php echo($menus[$i]->getPrix()) ?>€/personne</p>
+                    <p class="text white-text col-auto m-0"><?= $menus[$i]->getQuantiteMin() ?> minimum</p>
+                    <p class="headline secondary-text col-auto m-0"><?= $menus[$i]->getPrix() ?>€/personne</p>
                 </div>
                 <div class="row justify-content-center padding-t-l">
                     <div class="bouton bg-primary p-0 d-flex justify-content-center">

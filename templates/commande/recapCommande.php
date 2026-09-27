@@ -10,22 +10,22 @@
                 </div>
                 <div class="row justify-content-center margin-t-l">
                     <div class="col-10 col-md-4 bg-white radius-m">
-                        <input class="customInput w-100" type="text" name="name" id="nameinput" placeholder="Nom" value="<?php echo($user->getNom()) ?>" required>
+                        <input class="customInput w-100" type="text" name="name" id="nameinput" placeholder="Nom" value="<?= htmlspecialchars($user->getNom(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>" required>
                     </div>
                 </div>
                 <div class="row justify-content-center margin-t-l">
                     <div class="col-10 col-md-4 bg-white radius-m">
-                        <input class="customInput w-100" type="text" name="firstname" id="firstnameinput" placeholder="Prénom" value="<?php echo($user->getPrenom()) ?>" required>
+                        <input class="customInput w-100" type="text" name="firstname" id="firstnameinput" placeholder="Prénom" value="<?= htmlspecialchars($user->getPrenom(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>" required>
                     </div>
                 </div>
                 <div class="row justify-content-center margin-t-l">
                     <div class="col-10 col-md-4 bg-white radius-m">
-                        <input class="customInput w-100" type="text" name="mail" id="mailinput" placeholder="Adresse mail" value="<?php echo($user->getMail()) ?>" required>
+                        <input class="customInput w-100" type="text" name="mail" id="mailinput" placeholder="Adresse mail" value="<?= htmlspecialchars($user->getMail(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>" required>
                     </div>
                 </div>
                 <div class="row justify-content-center margin-t-l">
                     <div class="col-10 col-md-4 bg-white radius-m">
-                        <input class="customInput w-100" type="tel" name="phone" id="phoneinput" placeholder="Numéro de téléphone" pattern="[0-9]{10}" value="<?php echo($user->getTelephone()) ?>" required>
+                        <input class="customInput w-100" type="tel" name="phone" id="phoneinput" placeholder="Numéro de téléphone" pattern="[0-9]{10}" value="<?= htmlspecialchars($user->getTelephone(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>" required>
                     </div>
                 </div>
                 <div class="row justify-content-center margin-t-l">
@@ -67,7 +67,7 @@
                 </div>
                 <div class="row justify-content-center margin-t-l">
                     <div class="col-10 col-md-4 bg-white radius-m">
-                        <input class="customInput w-100" type="text" name="menu" id="menuinput" placeholder="Menu sélectionné" value="<?php echo($menu->getTitre()) ?>" required>
+                        <input class="customInput w-100" type="text" name="menu" id="menuinput" placeholder="Menu sélectionné" value="<?= htmlspecialchars($menu->getTitre(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>" required>
                     </div>
                 </div>
                 <div class="row justify-content-center margin-t-l margin-b-l">
@@ -84,7 +84,7 @@
                             <p class="col-auto headline primary-text text-center m-0">Récapitulatif de votre commande</p>
                         </div>
                         <div class="row justify-content-between margin-t-l">
-                            <p class="col-auto text white-text m-0">Menu : <?php echo($menu->getTitre()) ?></p>
+                            <p class="col-auto text white-text m-0">Menu : <?= htmlspecialchars($menu->getTitre(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></p>
                             <p id="menuPrice" class="col-auto text white-text m-0"><?php echo($menu->getPrix()) ?>€/pers</p>
                         </div>
                         <div class="row justify-content-between">
@@ -109,20 +109,20 @@
                     <div class="col-auto">
                         <p class="col-auto text white-text text-center m-0">Rappel :</p>
                         <p class="col-auto text white-text text-center m-0">
-                            <?php echo($entree->getlibelle()) ?>,<br><?php echo($plat->getlibelle()) ?>,<br><?php echo($dessert->getlibelle()) ?>
+                            <?= htmlspecialchars($entree->getlibelle(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>,<br><?= htmlspecialchars($plat->getlibelle(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>,<br><?= htmlspecialchars($dessert->getlibelle(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
                             <br><br>Allergènes : 
                             <?php
                                 $i = 0;
                                 foreach($allergenes as $allergene){
                                     if(++$i === count($allergenes)){
-                                        echo($allergene->getlibelle().'.');
+                                        echo(htmlspecialchars($allergene->getlibelle(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8').'.');
                                     }
                                     else{
-                                        echo($allergene->getlibelle().', ');
+                                        echo(htmlspecialchars($allergene->getlibelle(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8').', ');
                                     }
                                 }
                             ?><br><br>
-                            <?php echo($menu->getConditions()) ?>
+                            <?= htmlspecialchars($menu->getConditions(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>;
                         </p>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
         </main>
 
         <script>
-            let singleMenuPrice = <?php echo($menu->getPrix()) ?>;
+            let singleMenuPrice = <?= json_encode($menu->getPrix()) ?>;
         </script>
 
         <script src="./assets/js/commandeTools.js" defer></script>
