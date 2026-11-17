@@ -43,7 +43,7 @@
         {
             try{
                 $menuRepository = new MenuRepository();
-                $menus = $menuRepository->getAllMenus();
+                $menus = $menuRepository->getAvailableMenus();
 
                 $themeRepository = new ThemeRepository();
                 $themes = $themeRepository->getAllTheme();

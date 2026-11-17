@@ -30,6 +30,29 @@ class MenuRepository
         }
     }
 
+    public function getAvailableMenus(){
+        try{
+            // Appel bdd
+            $mysql = Mysql::getInstance();
+            $pdo = $mysql->getPDO();
+
+            $requete = 'SELECT * FROM menu WHERE quantite_dispo > quantite_min';
+            $query = $pdo->prepare($requete);
+
+            $query->execute();
+            $menuListe = [];
+            while($menuAnswer = $query->fetch($pdo::FETCH_ASSOC)){
+                $newMenu = new Menu;
+                array_push($menuListe, $newMenu->fromArray($menuAnswer));
+            }
+            
+            return $menuListe;
+        }
+        catch(\Exception $e){
+            // Gestion des erreurs
+        }
+    }
+
     public function getSingleMenu(int $id){
         try{
             // Appel bdd
