@@ -78,4 +78,37 @@ class MenuRepository
             return false;
         }
     }
+
+    public function getMenuQuantity(int $id):int
+    {
+        // Appel bdd
+        $mysql = Mysql::getInstance();
+        $pdo = $mysql->getPDO();
+
+        $requete = 'SELECT quantite_dispo FROM menu WHERE menu_id = :id';
+        $query = $pdo->prepare($requete);
+        $query->bindValue(':id', $id, $pdo::PARAM_INT);
+
+        $query->execute();
+
+        $menuQuantity = $query->fetch($pdo::FETCH_ASSOC);
+
+        return (int)$menuQuantity["quantite_dispo"];
+    }
+
+    public function updateMenuQuantity(int $id, int $newQuantity):void
+    {
+        // Appel bdd
+        $mysql = Mysql::getInstance();
+        $pdo = $mysql->getPDO();
+
+        $requete = 'UPDATE menu SET quantite_dispo = :newQuantity WHERE menu_id = :id';
+        $query = $pdo->prepare($requete);
+        $query->bindValue(':newQuantity', $newQuantity, $pdo::PARAM_INT);
+        $query->bindValue(':id', $id, $pdo::PARAM_INT);
+
+        $query->execute();
+    }
+
+
 }

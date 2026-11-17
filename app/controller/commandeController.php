@@ -220,15 +220,25 @@
                         throw new \Exception('Requête invalide.');
                     }
 
-                    $commandeRepository = new CommandeRepository();
-                    $commandeRepository->createCommande($commande);
+                    $menuRepository = new MenuRepository();
+                    $quantite_disponible = $menuRepository->getMenuQuantity($menu->getId());
+                    if($commande->getQuantite() > $quantite_disponible){
+                        throw new \Exception("La quantité demandée dépasse la quantité disponible.");
+                    }
+                    else{
+                        $newQuantity = $quantite_disponible - $commande->getQuantite();
+                        $menuRepository->updateMenuQuantity($menu->getId(), $newQuantity);
 
-                    // Supprimer la commande et le menu de la session après l'enregistrement
-                    $this->session->remove('commande');
-                    $this->session->remove('menu');
+                        $commandeRepository = new CommandeRepository();
+                        $commandeRepository->createCommande($commande);
 
-                    // Rediriger vers une page de confirmation ou d'accueil
-                    Redirect::to('userpage', 'showCommandes');
+                        // Supprimer la commande et le menu de la session après l'enregistrement
+                        $this->session->remove('commande');
+                        $this->session->remove('menu');
+
+                        // Rediriger vers espace utilisateur après la création de la commande
+                        Redirect::to('userpage', 'showCommandes');
+                    }
                 }
                 else{
                     // Rendu de la page
