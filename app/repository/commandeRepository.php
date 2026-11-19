@@ -59,7 +59,7 @@ class CommandeRepository
             $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
-            $requete = 'SELECT * FROM commande WHERE user_id = :userId';
+            $requete = 'SELECT * FROM commande WHERE user = :userId';
             $query = $pdo->prepare($requete);
             $query->bindValue(':userId', $userId, $pdo::PARAM_INT);
 
@@ -84,7 +84,7 @@ class CommandeRepository
             $mysql = Mysql::getInstance();
             $pdo = $mysql->getPDO();
 
-            $requete = 'SELECT * FROM commande WHERE menu_id = :menuId';
+            $requete = 'SELECT * FROM commande WHERE menu = :menuId';
             $query = $pdo->prepare($requete);
             $query->bindValue(':menuId', $menuId, $pdo::PARAM_INT);
 
