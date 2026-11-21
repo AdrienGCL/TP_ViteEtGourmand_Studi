@@ -169,4 +169,42 @@ Class UserRepository
             // Gestion des erreurs
         }
     }
+
+    // Modification d'un utilisateur
+    public function updateUser(int $id, string $nom, string $prenom, string $telephone, string $email, string $adresse, int $cp, string $ville, string $pays, string $mdp)
+    {
+        try{
+            // Appel bdd
+            $mysql = Mysql::getInstance();
+            $pdo = $mysql->getPDO();
+
+            if(!empty($mdp)){
+                $requete = 'UPDATE user SET prenom = :prenom, nom = :nom, telephone = :phone, mail = :email, adresse = :adresse, code_postale = :cp, ville = :ville, pays = :pays, password = :mdp WHERE user_id = :id';
+                $query = $pdo->prepare($requete);
+                
+                $password = password_hash($mdp, PASSWORD_DEFAULT);
+                $query->bindValue(':mdp', $password, $pdo::PARAM_STR);
+            }
+            else{
+                $requete = 'UPDATE user SET prenom = :prenom, nom = :nom, telephone = :phone, mail = :email, adresse = :adresse, code_postale = :cp, ville = :ville, pays = :pays WHERE user_id = :id';
+                $query = $pdo->prepare($requete);
+            }
+
+            // bindvalue
+            $query->bindValue(':prenom', $prenom, $pdo::PARAM_STR);
+            $query->bindValue(':nom', $nom, $pdo::PARAM_STR);
+            $query->bindValue(':phone', $telephone, $pdo::PARAM_STR);
+            $query->bindValue(':email', $email, $pdo::PARAM_STR);
+            $query->bindValue(':adresse', $adresse, $pdo::PARAM_STR);
+            $query->bindValue(':cp', $cp, $pdo::PARAM_INT);
+            $query->bindValue(':ville', StringTools::toUpperCase($ville), $pdo::PARAM_STR);
+            $query->bindValue(':pays', StringTools::toUpperCase($pays), $pdo::PARAM_STR);
+            $query->bindValue(':id', (int)$id, $pdo::PARAM_INT);
+
+            return ($query->execute());
+        }
+        catch(\Exception $e){
+            // Gestion des erreurs
+        }
+    }
 }
