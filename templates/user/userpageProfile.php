@@ -22,10 +22,10 @@
             <p class="text white-text text-center margin-t-s"><?php echo $user->getTelephone(); ?></p>
             <p class="text white-text text-center margin-t-s"><?php echo $user->getAdresse() . '<br>' . $user->getCodePostale() . ' ' . $user->getVille() .'<br>' . $user->getPays(); ?></p>
             
-            <form action="./index.php?controller=userpage&action=modifyProfile" method="post" class="m-0">
+            <form action="" method="post" class="m-0">
                 <div class="row justify-content-center margin-t-l">
                     <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf->getToken(), ENT_QUOTES, 'UTF-8') ?>">
-                    <button type="submit" class="modify-btn primary-border bg-dark radius-m">
+                    <button type="submit" class="modify-btn primary-border bg-dark radius-m" name="modifyProfile">
                         <i class="bi bi-pencil-fill primary-text fit"></i>
                     </button>
                 </div>

@@ -62,6 +62,44 @@
                 $etatCommandeRepository = new EtatCommandeRepository();
                 $etatCommandes = $etatCommandeRepository->getAllEtatCommande();
 
+                if(isset($_POST['viewCommande'])) {
+                    if (!$this->csrf->validate($_POST['csrf_token'] ?? null)) {
+                        throw new \Exception('Requête invalide.');
+                    }
+                    $this->session->set('view_commande_id', $_POST['commande_id']);
+
+                    // Redirection vers la page de visualisation de la commande
+                    redirect::to('commande', 'reviewCommande');
+                }
+
+                if(isset($_POST['modifyCommande'])) {
+                    if (!$this->csrf->validate($_POST['csrf_token'] ?? null)) {
+                        throw new \Exception('Requête invalide.');
+                    }
+                    if(!$commandeRepository->isModifiable($_POST['commande_id'])) {
+                        throw new \Exception('Cette commande ne peut pas être modifiée.');
+                    }
+
+                    $this->session->set('modify_commande_id', $_POST['commande_id']);
+
+                    // Redirection vers la page de modification de la commande
+                    redirect::to('commande', 'modifyCommande');
+                }
+
+                if(isset($_POST['deleteCommande'])) {
+                    if (!$this->csrf->validate($_POST['csrf_token'] ?? null)) {
+                        throw new \Exception('Requête invalide.');
+                    }
+                    if(!$commandeRepository->isModifiable($_POST['commande_id'])) {
+                        throw new \Exception('Cette commande ne peut pas être supprimée.');
+                    }
+
+                    $this->session->set('delete_commande_id', $_POST['commande_id']);
+
+                    // Redirection vers la page des commandes
+                    redirect::to('commande', 'deleteCommande');
+                }
+
 
                 // Rendu de la page
                 $this->render('user/userpageCommandes', ['commandes' => $commandes, 'userFirstName' => $user->getPrenom(), 'etatCommandes' => $etatCommandes]);
@@ -80,6 +118,14 @@
 
                 $userRepository = new UserRepository();
                 $user = $userRepository->getUserById($userId);
+
+                if(isset($_POST['modifyProfile'])) {
+                    if (!$this->csrf->validate($_POST['csrf_token'] ?? null)) {
+                        throw new \Exception('Requête invalide.');
+                    }
+                    // Redirection vers la page de modification du profil
+                    redirect::to('userpage', 'modifyProfile');
+                }
 
                 // Rendu de la page
                 $this->render('user/userpageProfile', ['user' => $user]);

@@ -43,7 +43,7 @@ class Controller
                     $controller = new AuthController($this->session);
                 break;
                 case 'commande':
-                    // charge le controller d'authentification
+                    // charge le controller de commande
                     $controller = new CommandeController($this->session);
                 break;
                 default:

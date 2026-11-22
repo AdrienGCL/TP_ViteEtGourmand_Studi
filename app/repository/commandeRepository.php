@@ -128,6 +128,28 @@ class CommandeRepository
         }
     }
 
+    public function isModifiable(int $commandeId): bool {
+        try {
+            // Appel bdd
+            $mysql = Mysql::getInstance();
+            $pdo = $mysql->getPDO();
+
+            $requete = 'SELECT etat FROM commande WHERE commande_id = :commandeId';
+            $query = $pdo->prepare($requete);
+            $query->bindValue(':commandeId', $commandeId, $pdo::PARAM_INT);
+
+            $query->execute();
+
+            $etat = $query->fetchColumn();
+
+            // Vérifie si l'état est 1 (en attente)
+            return ($etat === 1);
+        } catch (\Exception $e) {
+            // Gestion des erreurs
+            return false;
+        }
+    }
+
     public function createCommande(Commande $commande){
         try{
             // Appel bdd
