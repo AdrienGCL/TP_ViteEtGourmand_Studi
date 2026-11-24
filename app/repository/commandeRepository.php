@@ -178,4 +178,53 @@ class CommandeRepository
             // Gestion des erreurs
         }
     }
+
+    public function updateCommande(Commande $commande)
+    {
+        try{
+            // Appel bdd
+            $mysql = Mysql::getInstance();
+            $pdo = $mysql->getPDO();
+
+            $requete = 'UPDATE commande SET date_commande = :dateCommande, date_livraison = :dateLivraison, heure_livraison = :heureLivraison, adresse_livraison = :adresseLivraison, code_postale = :codePostale, ville = :ville, quantite = :quantite, prix_ttc = :prixTtc, prix_livraison = :prixLivraison, remise = :remise, menu = :menuId, user = :userId, etat = :etat WHERE commande_id = :commandeId';
+            $query = $pdo->prepare($requete);
+            $query->bindValue(':commandeId', $commande->getId(), $pdo::PARAM_INT);
+            $query->bindValue(':dateCommande', $commande->getDateCommande(), $pdo::PARAM_STR);
+            $query->bindValue(':dateLivraison', $commande->getDateLivraison(), $pdo::PARAM_STR);
+            $query->bindValue(':heureLivraison', $commande->getHeureLivraison(), $pdo::PARAM_STR);
+            $query->bindValue(':adresseLivraison', $commande->getAdresseLivraison(), $pdo::PARAM_STR);
+            $query->bindValue(':codePostale', $commande->getCodePostale(), $pdo::PARAM_INT);
+            $query->bindValue(':ville', $commande->getVille(), $pdo::PARAM_STR);
+            $query->bindValue(':quantite', $commande->getQuantite(), $pdo::PARAM_INT);
+            $query->bindValue(':prixTtc', $commande->getPrix(), $pdo::PARAM_STR);
+            $query->bindValue(':prixLivraison', $commande->getPrixLivraison(), $pdo::PARAM_STR);
+            $query->bindValue(':remise', $commande->getRemise(), $pdo::PARAM_STR);
+            $query->bindValue(':menuId', $commande->getMenu(), $pdo::PARAM_INT);
+            $query->bindValue(':userId', $commande->getUser(), $pdo::PARAM_INT);
+            $query->bindValue(':etat', $commande->getEtat(), $pdo::PARAM_INT);
+
+            $query->execute();
+        }
+        catch(\Exception $e){
+            // Gestion des erreurs
+        }
+    }
+
+    public function deleteCommande(int $commandeId)
+    {
+        try{
+            // Appel bdd
+            $mysql = Mysql::getInstance();
+            $pdo = $mysql->getPDO();
+
+            $requete = 'DELETE FROM commande WHERE commande_id = :commandeId';
+            $query = $pdo->prepare($requete);
+            $query->bindValue(':commandeId', $commandeId, $pdo::PARAM_INT);
+
+            $query->execute();
+        }
+        catch(\Exception $e){
+            // Gestion des erreurs
+        }
+    }
 }

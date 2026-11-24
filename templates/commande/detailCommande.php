@@ -60,18 +60,18 @@
                 <div class="row justify-content-center margin-t-l">
                     <div class="col-10 col-md-4 bg-white radius-m">
                             <label class="col-auto light-text m-0" for="datelivraisoninput">Date de livraison souhaitée</label>
-                            <input class="customInput w-100" type="date" name="datelivraison" id="datelivraisoninput" required>
+                            <input class="customInput w-100" type="date" name="datelivraison" id="datelivraisoninput" value="<?= $commande ? $commande->getDateLivraison() : '' ?>" required>
                     </div>
                 </div>
                 <div class="row justify-content-center margin-t-l">
                     <div class="col-10 col-md-4 bg-white radius-m">
                             <label class="col-auto light-text m-0" for="heurelivraisoninput">Heure de livraison souhaitée</label>
-                            <input class="customInput w-100" type="time" name="heurelivraison" id="heurelivraisoninput" required>
+                            <input class="customInput w-100" type="time" name="heurelivraison" id="heurelivraisoninput" value="<?= $commande ? $commande->getHeureLivraison() : '' ?>" required>
                     </div>
                 </div>
                 <div class="row justify-content-center margin-t-l">
                     <div class="col-10 col-md-4 bg-white radius-m">
-                        <input class="customInput w-100" type="text" name="adresselivraison" id="adresselivraisoninput" placeholder="Adresse de livraison" autocomplete="off" aria-autocomplete="list" aria-controls="suggestions" required>
+                        <input class="customInput w-100" type="text" name="adresselivraison" id="adresselivraisoninput" placeholder="Adresse de livraison" autocomplete="off" aria-autocomplete="list" aria-controls="suggestions" value="<?= $commande ? $commande->getAdresseLivraison() : '' ?>" required>
 
                         <ul id="suggestions" role="listbox"></ul>
 
@@ -80,12 +80,12 @@
                 </div>
                 <div class="row justify-content-center margin-t-l">
                     <div class="col-10 col-md-4 bg-white radius-m">
-                        <input class="customInput w-100" type="text" inputmode="numeric" pattern="[0-9]{5}" name="cplivraison" id="cplivraisoninput" placeholder="Code postale" autocomplete="postal-code" readonly>
+                        <input class="customInput w-100" type="text" inputmode="numeric" pattern="[0-9]{5}" name="cplivraison" id="cplivraisoninput" placeholder="Code postale" autocomplete="postal-code" readonly value="<?= $commande ? $commande->getCodePostale() : '' ?>">
                     </div>
                 </div>
                 <div class="row justify-content-center margin-t-l">
                     <div class="col-10 col-md-4 bg-white radius-m">
-                        <input class="customInput w-100" type="text" name="villelivraison" id="villelivraisoninput" placeholder="Ville" readonly>
+                        <input class="customInput w-100" type="text" name="villelivraison" id="villelivraisoninput" placeholder="Ville" value="<?= $commande ? $commande->getVille() : '' ?>" readonly>
                     </div>
                 </div>
                 <div class="row justify-content-center margin-t-l">
@@ -98,7 +98,7 @@
                 </div>
                 <div class="row justify-content-center margin-t-l margin-b-l">
                     <div class="col-10 col-md-4 bg-white radius-m">
-                        <input class="customInput w-100" type="number" name="quantite" id="quantiteinput" placeholder="Quantité (minimum <?php echo($menu->getQuantiteMin()) ?>)" min="<?php echo($menu->getQuantiteMin()) ?>" max="<?php echo($menu->getQuantiteDispo()) ?>" required>
+                        <input class="customInput w-100" type="number" name="quantite" id="quantiteinput" placeholder="Quantité (minimum <?php echo($menu->getQuantiteMin()) ?>)" min="<?php echo($menu->getQuantiteMin()) ?>" max="<?php if(!$commande){ echo($menu->getQuantiteDispo()); } else { echo($menu->getQuantiteDispo() + $commande->getQuantite()); } ?>" value="<?= $commande ? $commande->getQuantite() : '' ?>" required>
                     </div>
                 </div>
 
@@ -114,8 +114,8 @@
                             <p id="menuPrice" class="col-auto text white-text m-0"><?php echo($menu->getPrix()) ?>€/pers</p>
                         </div>
                         <div class="row justify-content-between">
-                            <p id="quantity" class="col-auto text white-text m-0">Quantité --</p>
-                            <p id="quantityPrice" class="col-auto text white-text m-0">--€</p>
+                            <p id="quantity" class="col-auto text white-text m-0">Quantité <?= $commande ? $commande->getQuantite() : '--' ?></p>
+                            <p id="quantityPrice" class="col-auto text white-text m-0"><?= $commande ? $commande->getQuantite() * $menu->getPrix() : '--' ?>€</p>
                         </div>
                         <div class="row justify-content-between margin-t-l">
                             <p id="livraison" class="col-auto text white-text m-0">Livraison</p>
@@ -127,7 +127,7 @@
                         </div> -->
                         <div class="row justify-content-between margin-t-l">
                             <p class="col-auto headline primary-text m-0">Total</p>
-                            <p id="totalPrice" class="col-auto headline primary-text m-0">--€</p>
+                            <p id="totalPrice" class="col-auto headline primary-text m-0"><?= $commande ? $commande->getQuantite() * $menu->getPrix() : '--' ?>€</p>
                         </div>
                     </div>
                 </div>

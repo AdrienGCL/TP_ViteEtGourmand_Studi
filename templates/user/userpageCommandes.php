@@ -29,7 +29,7 @@
                             <form action="" method="post" class="row margin-b-s mx-0 align-items-center justify-content-between m-0">
                                 <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf->getToken(), ENT_QUOTES, 'UTF-8') ?>">
                                 <input type="hidden" name="commande_id" value="<?= htmlspecialchars($commande->getId(), ENT_QUOTES, 'UTF-8') ?>">
-                                <input type="submit" class="col text white-text p-0 m-0 fit bg-transparent border-0 text-start text-decoration-underline" name="viewCommande" value="Commande n°<?= htmlspecialchars((int) $commande->getId(), ENT_QUOTES, 'UTF-8') ?> du <?= htmlspecialchars($commande->getDateCommande(), ENT_QUOTES, 'UTF-8') ?>">
+                                <input type="submit" class="col text white-text p-0 m-0 fit bg-transparent border-0 text-start text-decoration-underline" name="viewCommande" value="Commande n°<?= htmlspecialchars((int) $commande->getId(), ENT_QUOTES, 'UTF-8') ?> du <?= date('d/m/Y', strtotime(htmlspecialchars($commande->getDateCommande(), ENT_QUOTES, 'UTF-8'))) ?>">
                                 <p class="col text white-text p-0 m-0 fit text-center"><?= htmlspecialchars($etatCommandes[0]->getLibelle(), ENT_QUOTES, 'UTF-8') ?></p>
                                 <div class="col d-flex p-0 justify-content-end margin-r-s">
                                     <div class="row justify-content-center">
@@ -57,7 +57,7 @@
                 <?php foreach($commandes as $commande) {
                     if($commande->getEtat() > 1 && $commande->getEtat() < count($etatCommandes)) { ?>
                         <div class="row margin-b-s mx-0 align-items-center justify-content-between">
-                            <p class="col text white-text p-0 m-0 fit">Commande n°<?= htmlspecialchars((int) $commande->getId(), ENT_QUOTES, 'UTF-8') ?> du <?= htmlspecialchars($commande->getDateCommande(), ENT_QUOTES, 'UTF-8') ?></p>
+                            <p class="col text white-text p-0 m-0 fit">Commande n°<?= htmlspecialchars((int) $commande->getId(), ENT_QUOTES, 'UTF-8') ?> du <?= date('d/m/Y', strtotime(htmlspecialchars($commande->getDateCommande(), ENT_QUOTES, 'UTF-8'))) ?></p>
                             <p class="col text white-text p-0 m-0 fit text-center"><?= htmlspecialchars($etatCommandes[$commande->getEtat()]->getLibelle(), ENT_QUOTES, 'UTF-8') ?></p>
                             <div class="col d-flex m-0 p-0 justify-content-end"></div>
                         </div>
@@ -74,7 +74,7 @@
                 <?php foreach($commandes as $commande) {
                     if($commande->getEtat() === count($etatCommandes)) { ?>  
                         <div class="row mx-0 align-items-center justify-content-between">
-                            <p class="col text white-text p-0 m-0 fit cursor-default" href="./index.php?controller=commande&action=reviewCommande&commande_id=<?= htmlspecialchars((int) $commande->getId(), ENT_QUOTES, 'UTF-8') ?>">Commande n° <?= htmlspecialchars((int) $commande->getId(), ENT_QUOTES, 'UTF-8') ?> du <?= htmlspecialchars($commande->getDateCommande(), ENT_QUOTES, 'UTF-8') ?></p>
+                            <p class="col text white-text p-0 m-0 fit cursor-default" href="./index.php?controller=commande&action=reviewCommande&commande_id=<?= htmlspecialchars((int) $commande->getId(), ENT_QUOTES, 'UTF-8') ?>">Commande n° <?= htmlspecialchars((int) $commande->getId(), ENT_QUOTES, 'UTF-8') ?> du <?= date('d/m/Y', strtotime(htmlspecialchars($commande->getDateCommande(), ENT_QUOTES, 'UTF-8'))) ?></p>
                         </div>
                 <?php } } ?>
                 <?php require _ROOTPATH_.'/templates/separator.php'; ?>

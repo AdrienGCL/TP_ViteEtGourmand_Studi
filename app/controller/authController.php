@@ -57,6 +57,8 @@ class AuthController extends Controller
 
         // On conserve le panier
         $this->session->set('panier', $_POST['menuId']);
+        // On efface l'id de la commande à modifier pour éviter les conflits
+        $this->session->remove('modify_commande_id');
 
         if (!$this->session->isAuthenticated()) {
 
